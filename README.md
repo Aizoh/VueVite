@@ -69,3 +69,6 @@ eg
 ```
 Boolean props:</br>
 To pass props with a data type different to String, we must write **v-bind**: in front of the attribute we want to pass.
+
+**Modify Props<br>**
+When a component is created in the parent element we are not allowed to change the value of the prop received in the child element. So inside FoodItem.vue we cannot change the value of the ***'isFavorite'*** prop we get from App.vue. The prop is read-only from the parent, which is App.vue in our case.

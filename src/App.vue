@@ -8,7 +8,7 @@
   />
   <foodItem 
   foodName="Rice" 
-  foodDesc="Great taste of Mwea"
+  
   v-bind:isFavorite="true"
   />
   <foodItem 
