@@ -1,9 +1,21 @@
 
 <template>
   <h1>{{message}}</h1>
-  <foodItem foodName="Unga" foodDesc="Well prepared sima"/>
-  <foodItem foodName="Rice" foodDesc="Great taste of Mwea"/>
-  <foodItem foodName="Fish" foodDesc="Enjoy a taste of dholuo"/>
+  <foodItem 
+  foodName="Unga" 
+  foodDesc="Well prepared sima"
+  v-bind:isFavorite="true"
+  />
+  <foodItem 
+  foodName="Rice" 
+  foodDesc="Great taste of Mwea"
+  v-bind:isFavorite="true"
+  />
+  <foodItem 
+  foodName="Fish" 
+  foodDesc="Enjoy a taste of dholuo"
+  v-bind:isFavorite="false"
+  />
 </template>
 <script >
 

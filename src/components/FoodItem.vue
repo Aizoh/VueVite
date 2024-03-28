@@ -1,7 +1,9 @@
 
 <template>
     <div v-on:click="countClicks">
-    <h3>The fruit is {{foodName}}</h3>
+    <h3>The fruit is {{foodName}}
+      <img src="/food.jpeg" v-show="isFavorite">
+    </h3>
     <p>{{foodDesc}} </p>
     <p id="red">You have ordered {{ clicks }} times.</p>
     </div>
@@ -23,7 +25,8 @@
     },
     props: [
       'foodName',
-      'foodDesc'
+      'foodDesc',
+      'isFavorite'
     ]
 
   };

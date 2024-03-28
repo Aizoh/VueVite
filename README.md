@@ -32,28 +32,31 @@ npm run dev
 npm run build
 ```
 #### notes
-**Watcher**
-A watcher is a method that watches a data property with the same name.
-A watcher runs every time the data property value changes.
-Use a watcher if a certain data property value requires an action.
-**Computed Properties**
-Computed properties are like data properties, except they depend on other properties.
-Computed properties are written like methods, but they do not accept any input arguments.
-Computed properties are updated automatically when a dependency changes, while methods are called on when something happens, like with event handling for example.
-Computed properties are used when outputting something that depends on something else.
-**Methods**
-Vue methods are functions that belong to the Vue instance under the 'methods' property.
-Vue methods are great to use with event handling (v-on) to do more complex things.
-Vue methods can also be used to do other things than event handling.
-**Templates**
-A template in Vue is what we call the HTML part of our Vue application.
-The <template> tag will later be used in *.vue files to structure our code in a better way.
-It is possible to use template as a configuration option in the Vue instance, and put the HTML code inside.
+**Watcher**</br>
+A watcher is a method that watches a data property with the same name.</br>
+A watcher runs every time the data property value changes.</br>
+Use a watcher if a certain data property value requires an action.</br>
 
-**Components**
-Components in Vue lets us decompose our web page into smaller pieces that are easy to work with.
-We can work with a Vue component in isolation from the rest of the web page, with its own content and logic.
-A web page often consists of many Vue components.
+**Computed Properties**</br>
+Computed properties are like data properties, except they depend on other properties.</br>
+Computed properties are written like methods, but they do not accept any input arguments.</br>
+Computed properties are updated automatically when a dependency changes, while methods are called on when something happens, like with event handling for example.</br>
+Computed properties are used when outputting something that depends on something else.</br>
+
+**Methods**</br>
+Vue methods are functions that belong to the Vue instance under the 'methods' property.</br>
+Vue methods are great to use with event handling (v-on) to do more complex things.</br>
+Vue methods can also be used to do other things than event handling.</br>
+
+**Templates**</br>
+A template in Vue is what we call the HTML part of our Vue application.</br>
+The <template> tag will later be used in *.vue files to structure our code in a better way.</br>
+It is possible to use template as a configuration option in the Vue instance, and put the HTML code inside.</br>
+
+**Components**</br>
+Components in Vue lets us decompose our web page into smaller pieces that are easy to work with.</br>
+We can work with a Vue component in isolation from the rest of the web page, with its own content and logic.</br>
+A web page often consists of many Vue components.</br>
 - *Create a new folder components inside the src folder.*
     - *create a new file FoodItem.vue inside the components*
 
@@ -64,3 +67,5 @@ eg
 ```vue
 <food-item food-name="Apples"/>
 ```
+Boolean props:</br>
+To pass props with a data type different to String, we must write **v-bind**: in front of the attribute we want to pass.
