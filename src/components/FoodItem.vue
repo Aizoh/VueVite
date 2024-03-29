@@ -39,7 +39,7 @@
     </h3>
     <p>{{foodDesc}} </p>
     <p id="red">You have ordered {{ clicks }} times.</p>
-    <button v-on:click="toggleFavorite">Favorite</button>
+    <button v-on:click="toggleFavorite"  v-bind:class="{ 'favorite': foodIsFavorite }">Favorite</button>
     </div>
    
   </template>
@@ -109,6 +109,10 @@
     #red {
     font-weight: bold ;
     color: rgb(144, 12, 12);
+  }
+  .favorite{
+    font-weight: bold ;
+    color: rgb(249, 5, 5);
   }
   img {
     height: 1.5em;
