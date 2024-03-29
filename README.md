@@ -70,5 +70,55 @@ eg
 Boolean props:</br>
 To pass props with a data type different to String, we must write **v-bind**: in front of the attribute we want to pass.
 
-**Modify Props<br>**
-When a component is created in the parent element we are not allowed to change the value of the prop received in the child element. So inside FoodItem.vue we cannot change the value of the ***'isFavorite'*** prop we get from App.vue. The prop is read-only from the parent, which is App.vue in our case.
+**Modify Props</br>**
+When a component is created in the parent element we are not allowed to change the value of the prop received in the child element. So inside FoodItem.vue we cannot change the value of the ***'isFavorite'*** prop we get from App.vue. The prop is read-only from the parent, which is App.vue in our case.</br>
+
+**Emit**</br>
+With the built-in $emit() method in Vue we can create a custom event in the child component that can be captured in the parent element.</br>
+Props are used to send data from the parent element to the child component, and $emit() is used to do the oposite: to pass information from the child component to the parent.</br>
+```vue
+<script>
+export default {  
+//Props must be declared in the component, while emits are just recommended to be documented.
+  props: ['foodName','foodDesc','isFavorite'],
+  emits: ['toggle-favorite'],
+  methods: {
+    toggleFavorite() {
+      this.$emit('toggle-favorite', this.foodName);
+    }
+  }
+};
+</script>
+```
+**Fallthrough Attributes**
+A component can be called with attributes that are not declared as props, and they will simply fall through to the root element in the component.
+
+With fallthrough attributes you get a better overview from the parent where the component is created, and it simplifies our code because we don't need to declare the attribute as a prop.
+
+Typical attributes used to fall through are class, style and v-on.
+
+**Scoped Styling**
+Styling defined inside the <style> tag in a component, or in App.vue, is actually available globally in all components.
+
+To keep the styling limited locally to just the component, we can use the scope attribute on that component: <style scoped> like below
+
+```vue
+<template>
+  <p>This p-tag belongs to 'CompOne.vue'</p>
+</template>
+
+<script></script>
+
+<style scoped>
+  p {
+    background-color: pink;
+    width: 150px;
+  }
+</style>
+```
+**Local vs Global Components**
+The way we have included components so far makes them accessible from all *.vue files in a project. **ie, as they are being loaded from the main.js**
+
+Components can be made to be local, meaning that they are only accessible inside a specific *.vue file.
+
+let's make to do list Available locally only at Appa.vue

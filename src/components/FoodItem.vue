@@ -35,11 +35,11 @@
 <template>
     <div v-on:click="countClicks">
     <h3>The fruit is {{foodName}}
-      <img src="/food.jpeg" v-show="foodIsFavorite">
+      <img src="/food.jpeg" v-show="isFavorite">
     </h3>
     <p>{{foodDesc}} </p>
     <p id="red">You have ordered {{ clicks }} times.</p>
-    <button v-on:click="toggleFavorite"  v-bind:class="{ 'favorite': foodIsFavorite }">Favorite</button>
+    <button v-on:click="toggleFavorite">Favorite</button>
     </div>
    
   </template>
@@ -58,7 +58,9 @@
             return this.clicks++;
         },
         toggleFavorite() { 
-          this.foodIsFavorite = !this.foodIsFavorite;
+          //this.foodIsFavorite = !this.foodIsFavorite;
+          //emit an event to toggle
+          this.$emit('toggle-favorite', this.foodName);
         }
     },
     /**Props 1.1
